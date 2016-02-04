@@ -1,0 +1,36 @@
+<head>
+  <title>ReactiveBloomFilter</title>
+</head>
+
+<body>
+  <h1>Client Side Reactive Bloom Filter</h1>
+
+  {{> add}}
+  {{> list}}
+</body>
+
+<template name="add">
+  <form>
+    <input placeholder="Word to add" />
+    <button type="submit">Add</button>
+  </form>
+</template>
+
+<template name="list">
+  {{#each items}}
+    {{> listItem}}
+  {{/each}}
+</template>
+
+<template name="listItem">
+  <div class="list-item">
+    <span>{{key}}</span>
+    <span>
+      {{#if in}}
+        Maybe
+      {{else}}
+        No
+      {{/if}}
+    </span>
+  </div>
+</template>
