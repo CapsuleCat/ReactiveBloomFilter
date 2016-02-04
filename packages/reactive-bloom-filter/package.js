@@ -1,11 +1,9 @@
 Package.describe({
   name: 'capsulecat:reactive-bloom-filter',
   version: '0.0.1',
-  // Brief, one-line summary of the package.
   summary: 'Client side reactive bloom filters',
-  // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/CapsuleCat/ReactiveBloomFilter.git',
-  documentation: 'README.md'
+  documentation: '../../README.md'
 });
 
 Package.onUse(function(api) {
