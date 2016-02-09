@@ -1,5 +1,14 @@
 # Reactive Bloom Filters
+
+[![Buy Me a Cup of Coffee](https://az743702.vo.msecnd.net/cdn/coffee-3.png)](https://ko-fi.com?i=1056JIZ4CXX0X)
+
 Reactive client side bloom filters for Meteor.
+
+## Installation
+
+```sh
+meteor install capsulecat:reactive-bloom-filter
+```
 
 ## Usage
 
