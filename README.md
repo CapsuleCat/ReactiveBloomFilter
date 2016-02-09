@@ -1,6 +1,6 @@
 # Reactive Bloom Filters
 
-[![Buy Me a Cup of Coffee](https://az743702.vo.msecnd.net/cdn/coffee-3.png =150px)](https://ko-fi.com?i=1056JIZ4CXX0X)
+[![Buy Me a Cup of Coffee](https://img.shields.io/badge/%E2%98%95-buy%20me%20a%20coffee-blue.svg)](https://ko-fi.com?i=1056JIZ4CXX0X)
 
 Reactive client side bloom filters for Meteor.
 
