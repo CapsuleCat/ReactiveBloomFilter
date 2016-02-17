@@ -29,7 +29,26 @@ BloomFilter = class BloomFilter {
     words.forEach(word => this.insert(word));
   }
 
-  check(items) {
+  check(item) {
+    if (Tracker.active)
+      this.dep.depend();
+    
+    const hash = murmurhash2_32_gc(item);
+    const size = this.filter.length;
+    let isIn = true;
+
+    for (let i = 0; i < NUMBER_OF_INSERTIONS; i++) {
+      let position = (hash % (i * PRIME)) % size;
+      isIn = isIn && this.filter[position] === 1;
+    }
+
+    return {
+      key: item,
+      'in': isIn
+    };
+  },
+
+  checkAll(items) {
     if (Tracker.active)
       this.dep.depend();
 
