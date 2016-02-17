@@ -68,4 +68,19 @@ BloomFilter = class BloomFilter {
       }
     });
   }
+  
+  stringify() {
+    return JSON.stringify({
+      name: this.name,
+      filter: this.filter
+    });
+  }
 };
+
+BloomFilter.fromString = function (s) {
+  let json = JSON.parse(s);
+  let bloom = new BloomFilter(json.name, json.filter.length);
+  bloom.filter = json.filter;
+  
+  return bloom;
+}
