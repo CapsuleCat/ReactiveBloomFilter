@@ -20,7 +20,7 @@ if (Meteor.isClient) {
   // Bind the Bloom Filter to items
   Template.list.helpers({
     items: function () {
-      return Words.check(wordsToCheck);
+      return Words.checkAll(wordsToCheck);
     }
   });
 
