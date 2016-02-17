@@ -14,7 +14,13 @@ BloomFilter = class BloomFilter {
   }
 
   insert(item) {
-    const hash = murmurhash2_32_gc(item);
+    let s = item;
+    
+    if (typeof s !== 'string') {
+      s = JSON.stringify(item);
+    }
+    
+    const hash = murmurhash2_32_gc(s);
     const size = this.filter.length;
 
     for (let i = 0; i < NUMBER_OF_INSERTIONS; i++) {
@@ -32,8 +38,14 @@ BloomFilter = class BloomFilter {
   check(item) {
     if (Tracker.active)
       this.dep.depend();
+      
+    let s = item;
     
-    const hash = murmurhash2_32_gc(item);
+    if (typeof s !== 'string') {
+      s = JSON.stringify(item);
+    }
+    
+    const hash = murmurhash2_32_gc(s);
     const size = this.filter.length;
     let isIn = true;
 
