@@ -24,6 +24,10 @@ BloomFilter = class BloomFilter {
     
     this.dep.changed();
   }
+  
+  insertAll(words) {
+    words.forEach(word => this.insert(word));
+  }
 
   check(items) {
     if (Tracker.active)
