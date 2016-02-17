@@ -13,8 +13,8 @@ BloomFilter = class BloomFilter {
     }
   }
 
-  insert(word) {
-    const hash = murmurhash2_32_gc(word);
+  insert(item) {
+    const hash = murmurhash2_32_gc(item);
     const size = this.filter.length;
 
     for (let i = 0; i < NUMBER_OF_INSERTIONS; i++) {
@@ -25,8 +25,8 @@ BloomFilter = class BloomFilter {
     this.dep.changed();
   }
   
-  insertAll(words) {
-    words.forEach(word => this.insert(word));
+  insertAll(items) {
+    items.forEach(item => this.insert(item));
   }
 
   check(item) {
